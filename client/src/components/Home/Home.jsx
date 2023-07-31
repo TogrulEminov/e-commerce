@@ -1,10 +1,14 @@
+import Products from '../Products/Products';
 import Banner from './Banner/Banner';
+import Category from './Category/Category';
 import './Home.scss';
 const Home = () => {
   return (
-    <div>
+    <main className="main-section">
       <Banner />
-    </div>
+      <Category />
+      <Products   headingText="Popular Products" />
+    </main>
   );
 };
 

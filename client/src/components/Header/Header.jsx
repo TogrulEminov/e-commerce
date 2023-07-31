@@ -3,6 +3,7 @@ import { TbSearch } from 'react-icons/tb';
 import { CgShoppingCart } from 'react-icons/cg';
 import { AiOutlineHeart } from 'react-icons/ai';
 import Search from './Search/Search';
+import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import { Context } from '../../utils/Context';
 import { useEffect, useState } from 'react';
@@ -21,21 +22,30 @@ const Header = () => {
   }, []);
   return (
     <header className={`main-header ${scrolled ? 'sticky-header' : ''} `}>
-      <div className="header-content">
-        <ul className="left">
-          <li>Home</li>
-          <li>About</li>
-          <li>Categories</li>
-        </ul>
-        <div className="center">JSDEVSTORE.</div>
-        <div className="right">
-          <TbSearch />
-          <AiOutlineHeart />
-          <span className="cart-icon">
-            <CgShoppingCart />
-            <span>5</span>
-          </span>
-        </div>
+      <div className="container-fluid">
+        <nav className="header-content">
+          <ul className="left">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              {' '}
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/categories">Categories</Link>
+            </li>
+          </ul>
+          <div className="center">JSDEVSTORE.</div>
+          <div className="right">
+            <TbSearch />
+            <AiOutlineHeart />
+            <span className="cart-icon">
+              <CgShoppingCart />
+              <span>5</span>
+            </span>
+          </div>
+        </nav>
       </div>
     </header>
   );

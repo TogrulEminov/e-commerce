@@ -1,1 +1,85 @@
-@import "../../css-config/mixins.scss";
+@import '../../css-config/mixins.scss';
+.footer {
+  padding: 50px 0 0;
+  width: 100%;
+  .row {
+    @include md {
+      justify-content: space-between;
+      row-gap: 10px;
+    }
+    .footer-content {
+      padding: 20px 0;
+      @include md{
+        padding: 0;
+      }
+      .title {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        @include md {
+        margin-bottom: 10px;
+        font-size: 25px;
+        }
+      }
+      .text {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+      .c-item {
+        @include flex();
+        gap: 3px;
+        margin-bottom: 10px;
+        svg {
+          flex-shrink: 0;
+          font-size: 14px;
+          margin-right: 10px;
+          color: rgba(0, 0, 0, 0.801);
+        }
+      }
+      .footer-list {
+        padding: 0;
+        margin: 0;
+      }
+      a {
+        &.text {
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .bottom-bar {
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 20px 0;
+    .row {
+      justify-content: space-between;
+      @include md {
+        row-gap: 20px;
+      }
+      .payment-img {
+        @include flex();
+        justify-content: flex-end;
+        margin: 0;
+        @include md {
+          justify-content: center;
+        }
+      }
+      .text {
+        @include flex();
+        @include md {
+          justify-content: center;
+        }
+        p {
+          font-size: 18px;
+          color: rgba(0, 0, 0, 0.5);
+          margin: 0;
+          @include md {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

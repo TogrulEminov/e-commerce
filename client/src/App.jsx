@@ -5,6 +5,8 @@ import SingleProduct from './components/SingleProduct/SingleProduct';
 import Header from './components/Header/Header';
 import Newsletter from './components/Footer/Newsletter/Newsletter';
 import Footer from './components/Footer/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <Router>

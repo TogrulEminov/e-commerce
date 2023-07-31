@@ -1,64 +1,64 @@
 @import '../../css-config/mixins.scss';
 .main-header {
   width: 100%;
-  padding: 0 20px;
   background-color: #212121;
   color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 99;
   position: fixed;
   top: 0;
-  @include md {
-    padding: 0 40px;
-  }
   .header-content {
-    display: flex;
+    @include flex();
     justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 80px;
     @include md {
-      height: 80px;
+      height: 50px;
     }
     .left {
-      list-style-type: none;
-      display: none;
-      align-items: center;
+      margin: 0;
+      @include flex();
+      padding: 0;
       gap: 30px;
-      @include md {
-        display: flex;
-      }
       li {
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-        cursor: pointer;
+        a {
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+          cursor: pointer;
+          color: #fff;
+        }
+      }
+      @include md {
+        display: none;
       }
     }
     .center {
-      font-size: 22px;
+      font-size: 34px;
       font-weight: 700;
       cursor: pointer;
+      @include flex();
+      justify-content: flex-start;
       @include md {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 34px;
+        font-size: 22px;
+      }
+      @include sm{
+        font-size: 18px
       }
     }
     .right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+      @include flex();
+      gap: 25px;
       @include md {
-        gap: 25px;
+        gap: 15px;
       }
       svg {
-        font-size: 20px;
+        font-size: 24px;
         cursor: pointer;
         @include md {
-          font-size: 24px;
+          font-size: 20px;
+        }
+        @include sm{
+          font-size: 18px;
         }
       }
       .cart-icon {
@@ -74,16 +74,19 @@
           font-size: 12px;
           line-height: 1;
           border-radius: 50%;
+          @include sm{
+            min-width: 15px;
+            font-size: 10px;
+          }
         }
       }
     }
-  }
-  &.sticky-header {
-    transform: translateY(-80px);
-    animation: stickyHeader 0.3s ease forwards;
+    &.sticky-header {
+      transform: translateY(-80px);
+      animation: stickyHeader 0.3s ease forwards;
+    }
   }
 }
-
 @keyframes stickyHeader {
   0% {
     transform: translateY(-80px);
