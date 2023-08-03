@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showCard, setShowCard] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleScroll = () => {
     const offSet = window.scrollY;
@@ -41,7 +42,7 @@ const Header = () => {
           </ul>
           <div className="center">JSDEVSTORE.</div>
           <div className="right">
-            <TbSearch />
+            <TbSearch  onClick={()=>setShowSearch(true)}/>
             <AiOutlineHeart />
             <span className="cart-icon" onClick={()=>setShowCard(true)}>
               <CgShoppingCart />
@@ -52,6 +53,7 @@ const Header = () => {
       </div>
     </header>
     {showCard && <Cart  setShowCard={setShowCard}/>}
+    {showSearch && <Search setShowSearch={setShowSearch}/>}
   </>
   );
 };
