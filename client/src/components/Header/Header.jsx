@@ -9,6 +9,8 @@ import { Context } from '../../utils/Context';
 import { useEffect, useState } from 'react';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showCard, setShowCard] = useState(false);
+
   const handleScroll = () => {
     const offSet = window.scrollY;
     if (offSet > 200) {
@@ -21,6 +23,7 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
   }, []);
   return (
+  <>
     <header className={`main-header ${scrolled ? 'sticky-header' : ''} `}>
       <div className="container-fluid">
         <nav className="header-content">
@@ -40,7 +43,7 @@ const Header = () => {
           <div className="right">
             <TbSearch />
             <AiOutlineHeart />
-            <span className="cart-icon">
+            <span className="cart-icon" onClick={()=>setShowCard(true)}>
               <CgShoppingCart />
               <span>5</span>
             </span>
@@ -48,6 +51,8 @@ const Header = () => {
         </nav>
       </div>
     </header>
+    {showCard && <Cart  setShowCard={setShowCard}/>}
+  </>
   );
 };
 
