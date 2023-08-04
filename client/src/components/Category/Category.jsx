@@ -1,13 +1,19 @@
-import Products from '../Products/Products';
-import './Category.scss';
+import Products from "../Products/Products";
+import "./Category.scss";
 const Category = () => {
   return (
-    <div className="category-main-content">
-      <div className="container">
-        <h3 className="category-title">Category title</h3>
-        <Products innerPage={true} />
+    <main className="main-section">
+      <div className="category-main-content">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="category-title">Category title</h3>
+            </div>
+          </div>
+          <Products innerPage={true} />
+        </div>
       </div>
-    </div>
+    </main>
   );
 };
 

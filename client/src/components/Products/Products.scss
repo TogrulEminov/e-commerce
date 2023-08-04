@@ -1,9 +1,6 @@
 @import '../../css-config/mixins.scss';
 .all-products {
-  padding: 80px 0;
-  @include md {
-    padding: 50px 0;
-  }
+  padding: 40px 0;
   .sec-heading {
     margin-bottom: 35px;
     font-size: 24px;

@@ -17,7 +17,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
     @include md {
-      padding: 10px 50px;
+      padding: 10px 10px;
     }
     input {
       width: 100%;
@@ -33,6 +33,9 @@
         font-size: 20px;
         font-weight: 600;
       }
+      @include xs{
+        text-align: start;
+      }
     }
     .close-btn {
       position: absolute;
@@ -44,6 +47,9 @@
       @include md {
         font-size: 25px;
         right: 20px;
+      }
+      @include xs{
+        right: 0;
       }
     }
   }
