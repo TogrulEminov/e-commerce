@@ -1,33 +1,21 @@
 import './Category.scss';
-import cart1 from '../../../assets/category/cat-1.jpg';
-import cart2 from '../../../assets/category/cat-2.jpg';
-import cart3 from '../../../assets/category/cat-3.jpg';
-import cart4 from '../../../assets/category/cat-4.jpg';
-const Category = () => {
+import { Link } from 'react-router-dom';
+import { REACT_DEV_URL } from '../../../utils/api';
+const Category = ({categories}) => {
   return (
     <div className="shop-by-category">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-3 col-md-6 col-sm-6">
-            <div className="category">
-              <img src={cart1} alt="" />
-            </div>
-          </div>
-          <div className="col-12 col-lg-3 col-md-6 col-sm-6">
-            <div className="category">
-              <img src={cart2} alt="" />
-            </div>
-          </div>
-          <div className="col-12 col-lg-3 col-md-6 col-sm-6">
-            <div className="category">
-              <img src={cart3} alt="" />
-            </div>
-          </div>
-          <div className="col-12 col-lg-3 col-md-6 col-sm-6">
-            <div className="category">
-              <img src={cart4} alt="" />
-            </div>
-          </div>
+          {categories?.data?.map((item) => (
+            <Link to={`/category/${item.id}`} key={item.id} className="col-12 col-lg-3 col-md-6 col-sm-6">
+              <div className="category">
+                <img
+                  src={REACT_DEV_URL + item?.attributes?.img?.data?.attributes?.url}
+                  alt={item?.attributes?.title}
+                />
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

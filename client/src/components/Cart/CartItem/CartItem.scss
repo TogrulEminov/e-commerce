@@ -8,6 +8,7 @@
     .img-container {
       background-color: rgba(0, 0, 0, 0.5);
       width: 60px;
+      height: 60px;
       flex-shrink: 0;
       img {
         width: 100%;
@@ -17,6 +18,7 @@
     .prod-details {
       overflow: hidden;
       position: relative;
+      width: 100%;
       .name {
         text-overflow: ellipsis;
         white-space: nowrap;
